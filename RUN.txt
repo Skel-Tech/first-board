@@ -1,0 +1,20 @@
+First Board — family chess school
+
+The old laptop only needs a browser. This program runs on the home computer
+and keeps every account in a SQLite file. Goose runs the database updates
+when the server starts.
+
+One-time setup on the home computer (needs Go 1.25 or newer):
+
+  cd homelab
+  go build -o firstboard ./cmd/firstboard
+  ./firstboard
+
+Then, on the laptop, open http://<home-computer-address>:8080
+
+The database file is data/firstboard.db next to where you started the program.
+Copy that file if you want a backup of the family's lessons and wins.
+
+Optional:
+  FIRSTBOARD_ADDR=0.0.0.0:8080   (default)
+  FIRSTBOARD_DB=data/firstboard.db
